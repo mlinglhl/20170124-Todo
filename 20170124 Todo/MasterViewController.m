@@ -8,21 +8,31 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "ToDoTableViewCell.h"
 
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
 @end
 
-@implementation MasterViewController
+@implementation MasterViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+//    self.navigationItem.rightBarButtonItem = addButton;
+    
+    NSArray *array =  @[
+                        [[ToDo alloc] initWithTitle:@"Walk" description:@"Go for a walk" priority:2],
+                        [[ToDo alloc] initWithTitle:@"Run" description:@"Go for a run" priority:2],
+                        [[ToDo alloc] initWithTitle:@"Jog" description:@"Go for a jog. What happens if description is super huge? Like way longer than a couple of words. Will the system handle it? Is everything just awful forever?\n:(" priority:3],
+                        [[ToDo alloc] initWithTitle:@"Cook" description:@"Go cook" priority:5],
+                        [[ToDo alloc] initWithTitle:@"Sleep" description:@"Go to sleep" priority:5]
+                        ];
+    self.objects = [NSMutableArray arrayWithArray:array];
 }
 
 
@@ -46,18 +56,6 @@
 }
 
 
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
-        DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
-        [controller setDetailItem:object];
-    }
-}
-
-
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -69,12 +67,13 @@
     return self.objects.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    ToDoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    ToDo *todo = self.objects[indexPath.row];
+    cell.title.text = todo.title;
+    cell.preview.text = todo.todoDescription;
+    cell.priority.text = [NSString stringWithFormat:@"%ld", todo.priority];
     return cell;
 }
 
@@ -94,5 +93,28 @@
     }
 }
 
+#pragma mark - Delegate methods
+- (void) addToDo {
+    
+}
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ToDo *todo = self.objects[indexPath.row];
+        DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
+        controller.todo = todo;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"newTodo"]) {
+        AddToDoViewController *vc = segue.destinationViewController;
+        vc.todo = ^(ToDo* addTodo) {
+            [self.objects addObject: addTodo];
+            [self.tableView reloadData];
+        };
+    }
+}
 
 @end

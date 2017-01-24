@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  addToDoViewController.h
 //  20170124 Todo
 //
 //  Created by Minhung Ling on 2017-01-24.
@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ToDo.h"
-#import "AddToDoViewController.h"
 
-
-@class DetailViewController;
-
-@interface MasterViewController : UITableViewController
-
+@interface AddToDoViewController : UIViewController
+@property (copy) void(^todo)(ToDo *addTodo);
+- (IBAction)addItem:(UIButton *)sender;
 @end
-

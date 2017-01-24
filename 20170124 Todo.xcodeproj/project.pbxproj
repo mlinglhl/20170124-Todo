@@ -14,6 +14,9 @@
 		89C318451E37B1B700326A1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C318431E37B1B700326A1D /* Main.storyboard */; };
 		89C318471E37B1B700326A1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C318461E37B1B700326A1D /* Assets.xcassets */; };
 		89C3184A1E37B1B700326A1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C318481E37B1B700326A1D /* LaunchScreen.storyboard */; };
+		89C318531E37B3A600326A1D /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C318521E37B3A600326A1D /* ToDo.m */; };
+		89C318561E37B78700326A1D /* ToDoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C318551E37B78700326A1D /* ToDoTableViewCell.m */; };
+		89C318591E37CE6900326A1D /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C318581E37CE6800326A1D /* AddToDoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,13 @@
 		89C318461E37B1B700326A1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89C318491E37B1B700326A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C3184B1E37B1B700326A1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89C318511E37B3A600326A1D /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
+		89C318521E37B3A600326A1D /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
+		89C318541E37B78700326A1D /* ToDoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewCell.h; sourceTree = "<group>"; };
+		89C318551E37B78700326A1D /* ToDoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewCell.m; sourceTree = "<group>"; };
+		89C318571E37CE6800326A1D /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
+		89C318581E37CE6800326A1D /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
+		89C3185A1E37CEA300326A1D /* AddToDoViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddToDoViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,13 @@
 				89C3183E1E37B1B700326A1D /* MasterViewController.m */,
 				89C318401E37B1B700326A1D /* DetailViewController.h */,
 				89C318411E37B1B700326A1D /* DetailViewController.m */,
+				89C318571E37CE6800326A1D /* AddToDoViewController.h */,
+				89C318581E37CE6800326A1D /* AddToDoViewController.m */,
+				89C3185A1E37CEA300326A1D /* AddToDoViewControllerDelegate.h */,
+				89C318511E37B3A600326A1D /* ToDo.h */,
+				89C318521E37B3A600326A1D /* ToDo.m */,
+				89C318541E37B78700326A1D /* ToDoTableViewCell.h */,
+				89C318551E37B78700326A1D /* ToDoTableViewCell.m */,
 				89C318431E37B1B700326A1D /* Main.storyboard */,
 				89C318461E37B1B700326A1D /* Assets.xcassets */,
 				89C318481E37B1B700326A1D /* LaunchScreen.storyboard */,
@@ -155,8 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C318591E37CE6900326A1D /* AddToDoViewController.m in Sources */,
+				89C318531E37B3A600326A1D /* ToDo.m in Sources */,
 				89C3183C1E37B1B700326A1D /* AppDelegate.m in Sources */,
 				89C3183F1E37B1B700326A1D /* MasterViewController.m in Sources */,
+				89C318561E37B78700326A1D /* ToDoTableViewCell.m in Sources */,
 				89C318391E37B1B700326A1D /* main.m in Sources */,
 				89C318421E37B1B700326A1D /* DetailViewController.m in Sources */,
 			);
