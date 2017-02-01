@@ -7,12 +7,14 @@
 //
 
 #import "AddToDoViewController.h"
+#import "DataManagerSingleton.h"
 
 @interface AddToDoViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionField;
 @property ToDo* todoHolder;
+@property NSInteger todoPriority;
 
 @end
 
@@ -44,14 +46,20 @@
         button.backgroundColor = nil;
     }
     sender.backgroundColor = [UIColor greenColor];
-    self.todoHolder.priority = sender.tag;
+    self.todoPriority = sender.tag;
 }
 
 - (IBAction)addItem:(UIButton *)sender {
-    self.todoHolder.title = self.titleField.text;
-    self.todoHolder.todoDescription = self.descriptionField.text;
-    if (self.todoHolder.title.length > 0 && self.todoHolder.priority) {
-        self.todo(self.todoHolder);
+    DataManagerSingleton *manager = [DataManagerSingleton sharedManager];
+    NSManagedObjectContext *context = manager.persistentContainer.viewContext;
+    ToDoObject *newToDo = [[ToDoObject alloc] initWithContext:context];
+    newToDo.title = self.titleField.text;
+    newToDo.todoDescription = self.descriptionField.text;
+    if (self.todoPriority) {
+        newToDo.priority = self.todoPriority;
+    }
+    if (newToDo.title.length > 0) {
+        [manager saveContext];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

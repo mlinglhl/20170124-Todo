@@ -81,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WCw-Qf-5nD" customClass="ToDoTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ToDoTableViewCell" id="WCw-Qf-5nD" customClass="ToDoTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
@@ -121,6 +121,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="preview" destination="PiY-sn-tI0" id="Puz-1D-gKf"/>
                                     <outlet property="priority" destination="1Mm-zS-Kk5" id="BuL-2U-kfn"/>
@@ -138,7 +139,7 @@
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lma-eN-5Jv">
                             <connections>
-                                <segue destination="gj7-et-lXc" kind="presentation" identifier="newTodo" modalTransitionStyle="crossDissolve" id="VoR-vq-CMo"/>
+                                <segue destination="gj7-et-lXc" kind="presentation" identifier="AddToDoViewController" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="VoR-vq-CMo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

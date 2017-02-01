@@ -7,8 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "ToDoObject+CoreDataClass.h"
 
 @interface DetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *priorityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
@@ -17,9 +20,8 @@
 #pragma mark - Managing the detail item
 
 - (void)configureView {
-    // Update the user interface for the detail item.
         self.title = self.todo.title;
-        self.priorityLabel.text = [NSString stringWithFormat:@"Priority: %ld", self.todo.priority];
+        self.priorityLabel.text = [NSString stringWithFormat:@"Priority: %hd", self.todo.priority];
         self.descriptionLabel.text = self.todo.todoDescription;
 }
 
@@ -28,7 +30,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

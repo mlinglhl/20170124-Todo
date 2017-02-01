@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89A441871E42717D00D66397 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A441861E42717D00D66397 /* CoreData.framework */; };
+		89A4418A1E4271E800D66397 /* ToDoCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89A441881E4271E800D66397 /* ToDoCoreData.xcdatamodeld */; };
+		89A4418D1E4276EA00D66397 /* DataManagerSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A4418C1E4276EA00D66397 /* DataManagerSingleton.m */; };
 		89C318391E37B1B700326A1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C318381E37B1B700326A1D /* main.m */; };
 		89C3183C1E37B1B700326A1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C3183B1E37B1B700326A1D /* AppDelegate.m */; };
 		89C3183F1E37B1B700326A1D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C3183E1E37B1B700326A1D /* MasterViewController.m */; };
@@ -20,6 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89A441861E42717D00D66397 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		89A441891E4271E800D66397 /* ToDoCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoCoreData.xcdatamodel; sourceTree = "<group>"; };
+		89A4418B1E4276EA00D66397 /* DataManagerSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManagerSingleton.h; sourceTree = "<group>"; };
+		89A4418C1E4276EA00D66397 /* DataManagerSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManagerSingleton.m; sourceTree = "<group>"; };
+		89A4418E1E427D5900D66397 /* 20170124 Todo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "20170124 Todo-Bridging-Header.h"; sourceTree = "<group>"; };
+		89A441971E427EF500D66397 /* ToDoObject+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoObject+CoreDataClass.h"; sourceTree = "<group>"; };
+		89A441981E427EF500D66397 /* ToDoObject+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDoObject+CoreDataClass.m"; sourceTree = "<group>"; };
+		89A441991E427EF500D66397 /* ToDoObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoObject+CoreDataProperties.h"; sourceTree = "<group>"; };
+		89A4419A1E427EF500D66397 /* ToDoObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDoObject+CoreDataProperties.m"; sourceTree = "<group>"; };
 		89C318341E37B1B700326A1D /* 20170124 Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20170124 Todo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C318381E37B1B700326A1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		89C3183A1E37B1B700326A1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,7 +50,6 @@
 		89C318551E37B78700326A1D /* ToDoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewCell.m; sourceTree = "<group>"; };
 		89C318571E37CE6800326A1D /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
 		89C318581E37CE6800326A1D /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
-		89C3185A1E37CEA300326A1D /* AddToDoViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddToDoViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,17 +57,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A441871E42717D00D66397 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89A441851E42717D00D66397 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89A441861E42717D00D66397 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89C3182B1E37B1B700326A1D = {
 			isa = PBXGroup;
 			children = (
+				89A441971E427EF500D66397 /* ToDoObject+CoreDataClass.h */,
+				89A441981E427EF500D66397 /* ToDoObject+CoreDataClass.m */,
+				89A441991E427EF500D66397 /* ToDoObject+CoreDataProperties.h */,
+				89A4419A1E427EF500D66397 /* ToDoObject+CoreDataProperties.m */,
 				89C318361E37B1B700326A1D /* 20170124 Todo */,
 				89C318351E37B1B700326A1D /* Products */,
+				89A441851E42717D00D66397 /* Frameworks */,
+				89A4418E1E427D5900D66397 /* 20170124 Todo-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,13 +99,14 @@
 			children = (
 				89C3183A1E37B1B700326A1D /* AppDelegate.h */,
 				89C3183B1E37B1B700326A1D /* AppDelegate.m */,
+				89A4418B1E4276EA00D66397 /* DataManagerSingleton.h */,
+				89A4418C1E4276EA00D66397 /* DataManagerSingleton.m */,
 				89C3183D1E37B1B700326A1D /* MasterViewController.h */,
 				89C3183E1E37B1B700326A1D /* MasterViewController.m */,
 				89C318401E37B1B700326A1D /* DetailViewController.h */,
 				89C318411E37B1B700326A1D /* DetailViewController.m */,
 				89C318571E37CE6800326A1D /* AddToDoViewController.h */,
 				89C318581E37CE6800326A1D /* AddToDoViewController.m */,
-				89C3185A1E37CEA300326A1D /* AddToDoViewControllerDelegate.h */,
 				89C318511E37B3A600326A1D /* ToDo.h */,
 				89C318521E37B3A600326A1D /* ToDo.m */,
 				89C318541E37B78700326A1D /* ToDoTableViewCell.h */,
@@ -87,6 +114,7 @@
 				89C318431E37B1B700326A1D /* Main.storyboard */,
 				89C318461E37B1B700326A1D /* Assets.xcassets */,
 				89C318481E37B1B700326A1D /* LaunchScreen.storyboard */,
+				89A441881E4271E800D66397 /* ToDoCoreData.xcdatamodeld */,
 				89C3184B1E37B1B700326A1D /* Info.plist */,
 				89C318371E37B1B700326A1D /* Supporting Files */,
 			);
@@ -132,6 +160,7 @@
 				TargetAttributes = {
 					89C318331E37B1B700326A1D = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -173,7 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C318591E37CE6900326A1D /* AddToDoViewController.m in Sources */,
+				89A4418D1E4276EA00D66397 /* DataManagerSingleton.m in Sources */,
 				89C318531E37B3A600326A1D /* ToDo.m in Sources */,
+				89A4418A1E4271E800D66397 /* ToDoCoreData.xcdatamodeld in Sources */,
 				89C3183C1E37B1B700326A1D /* AppDelegate.m in Sources */,
 				89C3183F1E37B1B700326A1D /* MasterViewController.m in Sources */,
 				89C318561E37B78700326A1D /* ToDoTableViewCell.m in Sources */,
@@ -296,10 +327,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "20170124 Todo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mling.-0170124-Todo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "20170124 Todo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -307,10 +342,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "20170124 Todo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mling.-0170124-Todo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "20170124 Todo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -333,8 +371,22 @@
 				89C318501E37B1B700326A1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		89A441881E4271E800D66397 /* ToDoCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				89A441891E4271E800D66397 /* ToDoCoreData.xcdatamodel */,
+			);
+			currentVersion = 89A441891E4271E800D66397 /* ToDoCoreData.xcdatamodel */;
+			path = ToDoCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 89C3182C1E37B1B700326A1D /* Project object */;
 }
