@@ -57,6 +57,7 @@
         controller.todo = todo;
     }
 }
+
 //
 //- (IBAction)strikeOutText:(UISwipeGestureRecognizer *)sender {
 //    CGPoint swipe = [sender locationInView:self.view];
